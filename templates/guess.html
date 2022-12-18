@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href = ".static/style.css">
+    <link rel="stylesheet" href = "./static/style.css">
     <meta charset="UTF-8">
     <title>Guess Name and Age </title>
 </head>
 <body>
-<h1>Hey {{name.capitalize()}},</h1>
+
+<h1>Hey {{name.capitalize()}} {% if gender == "male" : %}
+   {% if age< 20 : %}
+      👱🏻‍️
+    {% elif age < 40 :%}
+        👨🏻‍🦰
+   {%else : %}
+         👨🏼‍🦳
+    {% endif %}
+{% else:%}
+   {% if age< 20 : %}
+          👱‍
+    {% elif age < 40 :%}
+     👩‍🦰
+   {%else : %}
+     👩🏻‍🦳
+    {% endif %}
+{% endif %}</h1>
 <h2>I think you are a {{gender}} and maybe {{age}} years old</h2>
 </body>
 <footer>
